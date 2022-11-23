@@ -1,0 +1,14 @@
+.root{
+   -fx-background-color: linear-gradient(from 200px 200px to 800px 800px, #001214, #001f29);
+   -fx-font-size: 15px;
+}
+
+.label{
+-fx-text-fill: white;
+-fx-font-family: calibri;
+-fx-font-size: 30px;
+}
+
+.button{
+
+}
