@@ -3,7 +3,6 @@ package com.example.universities_list;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,32 +25,33 @@ public class APIUtility {
         HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
 
         HttpResponse<Path> httpResponse = httpClient.send(httpRequest, HttpResponse
-                                                    .BodyHandlers
-                                                    .ofFile(Paths.get("universities.json")));
+                .BodyHandlers
+                .ofFile(Paths.get("universities.json")));
 
     }
     /*
      *This method will read from "movies.json" and create an APIResponse object
      */
-    public static APIResponse getUniversitiesListFromFile(){
+
+    public static APIResponse[] getUniversitiesListFromFile(){
         Gson gson = new Gson();
 
-        APIResponse apiResponse =null;
+        APIResponse[] apiResponse = null;
+
 
         try(
                 FileReader fileReader = new FileReader("universities.json");
                 JsonReader jsonReader = new JsonReader(fileReader);
+
                 )
         {
-            apiResponse = gson.fromJson(jsonReader, APIResponse.class);
+            apiResponse = gson.fromJson(jsonReader, APIResponse[].class);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-return apiResponse;
+        return apiResponse;
     }
-
-
 }
