@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="850.0" prefWidth="720.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.universities_list.ListsController">
    <children>
-      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="720.0" spacing="20.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="720.0" spacing="40.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
@@ -28,7 +28,7 @@
                      </font>
                   </Label>
                   <TextField id="nameField" fx:id="textFieldSection" prefHeight="36.0" prefWidth="290.0" stylesheets="@style.css" />
-                  <Button fx:id="searchButton" mnemonicParsing="false">
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search">
                      <graphic>
                         <ImageView fitHeight="48.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -42,10 +42,26 @@
                   </Button>
                </children>
             </HBox>
-            <ListView fx:id="listViewSection" maxWidth="504.0" prefHeight="409.0" prefWidth="504.0" style="-fx-background-radius: 10px;">
+            <ListView fx:id="resultsBoxSection" maxWidth="504.0" prefHeight="420.0" prefWidth="504.0" style="-fx-background-radius: 10px;">
                <effect>
                   <DropShadow />
-               </effect></ListView>
+               </effect>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></ListView>
+            <Button fx:id="websiteButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="157.0" text="Official website &gt;&gt;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="messageSection" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" styleClass="message" stylesheets="@style.css" text="Message!" textFill="WHITE">
+               <font>
+                  <Font name="Monospaced Regular" size="29.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
          </children>
       </VBox>
    </children>

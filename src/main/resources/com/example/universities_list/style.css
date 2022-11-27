@@ -21,8 +21,14 @@
 -fx-background-radius: 10px;
 -fx-background-color: white;
 }
+
 .button:hover{
 -fx-background-radius: 10px;
 -fx-background-color: skyBlue;
 
+}
+
+.message{
+-fx-background-color: #093e50;
+-fx-background-radius: 5px;
 }
