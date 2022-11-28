@@ -28,7 +28,7 @@
                      </font>
                   </Label>
                   <TextField id="nameField" fx:id="textFieldSection" prefHeight="36.0" prefWidth="290.0" stylesheets="@style.css" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search">
+                  <Button mnemonicParsing="false" onAction="#search">
                      <graphic>
                         <ImageView fitHeight="48.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>

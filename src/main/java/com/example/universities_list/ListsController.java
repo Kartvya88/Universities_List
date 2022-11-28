@@ -31,9 +31,13 @@ public class ListsController implements Initializable {
     @FXML
     void search(ActionEvent actionEvent) throws IOException, InterruptedException {
 
+//        APIUtility.getUniversitiesList(textFieldSection.getText());
+//        Uni uni = APIUtility.getUniversitiesListFromFile()[100];
+//        resultsBoxSection.getItems().addAll(uni.getName());
+
         APIUtility.getUniversitiesList(textFieldSection.getText());
-        APIResponse apiResponse = APIUtility.getUniversitiesListFromFile()[100];
-        resultsBoxSection.getItems().addAll(apiResponse.getContentAsList());
+        Uni[] uni = APIUtility.getUniversitiesListFromFile();
+        resultsBoxSection.getItems().addAll(uni);
 
     }
     @Override

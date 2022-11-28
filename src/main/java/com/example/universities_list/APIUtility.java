@@ -9,47 +9,39 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class APIUtility {
 
-    public static APIResponse[] getUniversitiesList(String searchTerm) throws IOException, InterruptedException {
+    public static void getUniversitiesList(String searchTerm) throws IOException, InterruptedException {
         searchTerm = searchTerm.replaceAll(" ","%20");
 
         String uri = "http://universities.hipolabs.com/search?country="+searchTerm;
 
-        HttpClient httpClient = HttpClient.newHttpClient();
+        HttpClient client = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
-
-
-        HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse
-                .BodyHandlers.ofString());
-
-        //parse the JSON object and return it as a Java object
-        Gson gson = new Gson();
-        return gson.fromJson(response.body(),APIResponse[].class);
-
+        HttpResponse<Path> httpResponse = client.send(httpRequest, HttpResponse
+                                                    .BodyHandlers
+                                                    .ofFile(Paths.get("universities.json")));
     }
-    /*
-     *This method will read from "movies.json" and create an APIResponse object
-     */
 
-    public static APIResponse[] getUniversitiesListFromFile(){
+    public static Uni[] getUniversitiesListFromFile(){
         Gson gson = new Gson();
-        APIResponse[] apiResponse = new APIResponse[100];
+        Uni[] apiResponses = null;
 
         try(
                 FileReader fileReader = new FileReader("universities.json");
                 JsonReader jsonReader = new JsonReader(fileReader);
-
                 )
         {
-            apiResponse = gson.fromJson(jsonReader,APIResponse[].class);
+           apiResponses = gson.fromJson(jsonReader,Uni[].class);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return apiResponse;
+        return apiResponses;
     }
 }

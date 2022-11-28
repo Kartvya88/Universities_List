@@ -2,11 +2,7 @@ package com.example.universities_list;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.jar.Attributes;
-
-public class Uni {
+public class Uni{
     private String country;
     private String[] domains;
     private String[] web_pages;
@@ -71,5 +67,10 @@ public class Uni {
     public void setStateProvince(String stateProvince) {
         this.stateProvince = stateProvince;
     }
+
+    public String toString(){
+        return String.format("%s",name);
+    }
+
 
 }
