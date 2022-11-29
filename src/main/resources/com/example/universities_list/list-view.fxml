@@ -20,12 +20,26 @@
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
          <children>
-            <HBox id="searchTag" alignment="CENTER" maxWidth="500.0" spacing="5.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #093e50; -fx-background-radius: 10px;" text="Search for Universities" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="32.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <HBox id="searchTag" alignment="CENTER" maxWidth="500.0" spacing="10.0">
                <children>
-                  <Label id="countyName" prefHeight="46.0" prefWidth="108.0" stylesheets="@style.css" text="Country:">
+                  <Label id="countyName" prefHeight="46.0" prefWidth="242.0" stylesheets="@style.css" text="Country Name:">
                      <font>
                         <Font size="21.0" />
                      </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </Label>
                   <TextField id="nameField" fx:id="textFieldSection" prefHeight="36.0" prefWidth="290.0" stylesheets="@style.css" />
                   <Button mnemonicParsing="false" onAction="#search">
@@ -42,16 +56,16 @@
                   </Button>
                </children>
             </HBox>
-            <ListView fx:id="resultsBoxSection" maxWidth="504.0" prefHeight="420.0" prefWidth="504.0" style="-fx-background-radius: 10px;">
+            <ListView id="resultsBox" fx:id="resultsBoxSection" maxWidth="504.0" prefHeight="420.0" prefWidth="504.0" style="-fx-border-color: black;">
                <effect>
                   <DropShadow />
                </effect>
                <VBox.margin>
                   <Insets />
                </VBox.margin></ListView>
-            <Button fx:id="websiteButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="157.0" text="Official website &gt;&gt;">
+            <Button mnemonicParsing="false" onAction="#details" prefHeight="36.0" prefWidth="158.0" text="Get Details &gt;&gt;">
                <font>
-                  <Font size="16.0" />
+                  <Font size="20.0" />
                </font>
             </Button>
             <Label fx:id="messageSection" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" styleClass="message" stylesheets="@style.css" text="Message!" textFill="WHITE">
@@ -65,4 +79,7 @@
          </children>
       </VBox>
    </children>
+   <effect>
+      <DropShadow />
+   </effect>
 </AnchorPane>

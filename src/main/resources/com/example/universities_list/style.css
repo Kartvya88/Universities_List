@@ -29,6 +29,10 @@
 }
 
 .message{
--fx-background-color: #093e50;
+-fx-background-color: #0f5269;
 -fx-background-radius: 5px;
+}
+
+.resultsBox{
+-fx-font-size: 20px;
 }

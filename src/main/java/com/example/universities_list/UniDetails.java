@@ -1,30 +1,13 @@
 package com.example.universities_list;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.Arrays;
 import java.util.List;
 
-public class Uni{
+public class UniDetails {
     private String country;
     private String[] domains;
     private String[] web_pages;
-    private String alpha_two_code;
     private String name;
-    @SerializedName("state-province")
-    private String stateProvince;
-
-    public Uni(){
-
-    }
-    public Uni(String country, String[] domains, String[] web_pages, String alpha_two_code, String name, String stateProvince) {
-        setCountry(country);
-        setDomains(domains);
-        setWeb_pages(web_pages);
-        setAlpha_two_code(alpha_two_code);
-        setName(name);
-        setStateProvince(stateProvince);
-    }
 
     public String getCountry() {
         return country;
@@ -50,14 +33,6 @@ public class Uni{
         this.web_pages = web_pages;
     }
 
-    public String getAlpha_two_code() {
-        return alpha_two_code;
-    }
-
-    public void setAlpha_two_code(String alpha_two_code) {
-        this.alpha_two_code = alpha_two_code;
-    }
-
     public String getName() {
         return name;
     }
@@ -66,20 +41,10 @@ public class Uni{
         this.name = name;
     }
 
-    public String getStateProvince() {
-        return stateProvince;
-    }
-
-    public void setStateProvince(String stateProvince) {
-        this.stateProvince = stateProvince;
-    }
-
-
     @Override
     public String toString() {
         return "UniDetails{" +
                 "web_pages=" + Arrays.toString(web_pages) +
                 '}';
     }
-
 }
