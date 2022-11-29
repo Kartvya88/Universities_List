@@ -33,13 +33,11 @@ public class ListsController implements Initializable {
     @FXML
     void details(ActionEvent event) throws IOException {
         Uni uni = resultsBoxSection.getSelectionModel().getSelectedItem();
-        SceneChanger.changeScenes(event,"details-view.fxml", uni.toString() );
+        SceneChanger.changeScenes(event, "details-view.fxml", uni.getCountry(), uni.arrayToString(), uni.getName());
     }
 
     @FXML
     void search(ActionEvent actionEvent) throws IOException, InterruptedException {
-
-
         APIUtility.getUniversitiesList(textFieldSection.getText());
         Uni[] uni = APIUtility.getUniversitiesListFromFile();
             resultsBoxSection.getItems().addAll(uni);
@@ -47,13 +45,12 @@ public class ListsController implements Initializable {
             messageSection.setVisible(true);
             resultsBoxSection.getItems().clear();
             resultsBoxSection.getItems().addAll(uni);
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         resultsBoxSection.setVisible(false);
         messageSection.setVisible(false);
-    }
 
+    }
 }

@@ -3,7 +3,6 @@ package com.example.universities_list;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Uni{
     private String country;
@@ -77,9 +76,11 @@ public class Uni{
 
     @Override
     public String toString() {
-        return "UniDetails{" +
-                "web_pages=" + Arrays.toString(web_pages) +
-                '}';
+        return name;
     }
 
+
+    public String arrayToString(){
+        return Arrays.toString(web_pages);
+    }
 }
