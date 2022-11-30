@@ -15,27 +15,37 @@ public class DetailsController {
     private Label domainsLabel;
 
     @FXML
-    private Label universityNameLabel;
+    private Label nameLabel;
 
     @FXML
     private Label webPageLabel;
+
+    @FXML
+    private Label alphaLabel;
 
     @FXML
     void backToHomePage(ActionEvent event) throws IOException {
         SceneChanger.changeScenesToHomePage(event, "list-view.fxml");
     }
 
-    public void getUniDetailsCountry(String country ){
-        countryLabel.setText("Country: "+ country);
-    }
-
     public void getUniDetailsWebPage(String web_Pages){
-        webPageLabel.setText("Web Page: "+ web_Pages);
-
+        webPageLabel.setText("Web Page:   "+ web_Pages);
     }
 
     public void getUniDetailsName(String name){
-        universityNameLabel.setText("University Name: "+ name);
+        nameLabel.setText("Name:   "+ name);
+    }
+
+    public void getUniDetailsCountry(String country ){
+        countryLabel.setText("Country:   "+ country);
+    }
+
+    public void getUniDetailsDomains(String domains){
+        domainsLabel.setText("Domains:   "+ domains);
+    }
+
+    public void getUniDetailsAlphaCode(String alpha_code){
+        alphaLabel.setText("Alpha Code:  "+ alpha_code);
     }
 
 }

@@ -8,13 +8,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger{
-    public static void changeScenes(ActionEvent event, String fxmlFileName, String country, String web_Pages, String name) throws IOException {
+    public static void changeScenes(ActionEvent event, String fxmlFileName,  String web_Pages, String name, String country, String domains, String alpha_two_code) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFileName));
         Scene scene = new Scene(fxmlLoader.load());
 
         DetailsController controller = fxmlLoader.getController();
         controller.getUniDetailsCountry(country);
         controller.getUniDetailsWebPage(web_Pages);
+        controller.getUniDetailsDomains(domains);
+        controller.getUniDetailsAlphaCode(alpha_two_code);
         controller.getUniDetailsName(name);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

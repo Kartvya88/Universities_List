@@ -2,3 +2,19 @@
    -fx-background-color: linear-gradient(from 200px 200px to 800px 800px, #001214, #001f29);
 }
 
+.button:hover{
+-fx-background-radius: 10px;
+-fx-background-color: skyBlue;
+
+}
+
+.button{
+-fx-background-radius: 10px;
+-fx-background-color: white;
+}
+
+.middlePane{
+-fx-background-image: url("image/university.jpg");
+-fx-background-radius: 20px;
+
+}

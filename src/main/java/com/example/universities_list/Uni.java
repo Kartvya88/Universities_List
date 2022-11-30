@@ -16,6 +16,7 @@ public class Uni{
     public Uni(){
 
     }
+
     public Uni(String country, String[] domains, String[] web_pages, String alpha_two_code, String name, String stateProvince) {
         setCountry(country);
         setDomains(domains);
@@ -30,7 +31,11 @@ public class Uni{
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        if(country.length()>0){
+            this.country = country;
+        }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ country);
+        }
     }
 
     public String[] getDomains() {
@@ -38,7 +43,11 @@ public class Uni{
     }
 
     public void setDomains(String[] domains) {
-        this.domains = domains;
+        if(domains.length>0) {
+            this.domains = domains;
+        }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ domains);
+        }
     }
 
     public String[] getWeb_pages() {
@@ -46,7 +55,11 @@ public class Uni{
     }
 
     public void setWeb_pages(String[] web_pages) {
-        this.web_pages = web_pages;
+        if(web_pages.length>0) {
+            this.web_pages = web_pages;
+        }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ web_pages);
+        }
     }
 
     public String getAlpha_two_code() {
@@ -54,7 +67,11 @@ public class Uni{
     }
 
     public void setAlpha_two_code(String alpha_two_code) {
+        if(alpha_two_code.length()>0){
         this.alpha_two_code = alpha_two_code;
+    }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ alpha_two_code);
+        }
     }
 
     public String getName() {
@@ -62,7 +79,11 @@ public class Uni{
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name.length()>0){
+            this.name= name;
+        }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ name);
+        }
     }
 
     public String getStateProvince() {
@@ -70,17 +91,26 @@ public class Uni{
     }
 
     public void setStateProvince(String stateProvince) {
-        this.stateProvince = stateProvince;
+        if(stateProvince.length()>0) {
+            this.stateProvince = stateProvince;
+        }else{
+            throw new IllegalArgumentException("Length must be greater than 0 for: "+ stateProvince);
+        }
     }
-
 
     @Override
     public String toString() {
         return name;
     }
 
-
     public String arrayToString(){
         return Arrays.toString(web_pages);
     }
+
+    public String arrayToStringDomain(){
+        return Arrays.toString(domains);
+    }
+
+
+
 }

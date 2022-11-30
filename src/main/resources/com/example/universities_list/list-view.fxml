@@ -56,7 +56,7 @@
                   </Button>
                </children>
             </HBox>
-            <ListView id="resultsBox" fx:id="resultsBoxSection" maxWidth="504.0" prefHeight="420.0" prefWidth="504.0" style="-fx-border-color: black;">
+            <ListView id="resultsBox" fx:id="resultsBoxSection" maxWidth="600.0" prefHeight="500.0" prefWidth="504.0" style="-fx-border-color: black;">
                <effect>
                   <DropShadow />
                </effect>
@@ -68,7 +68,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Label fx:id="messageSection" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" styleClass="message" stylesheets="@style.css" text="Message!" textFill="WHITE">
+            <Label fx:id="messageSection" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" styleClass="message" stylesheets="@style.css" textFill="WHITE">
                <font>
                   <Font name="Monospaced Regular" size="29.0" />
                </font>
